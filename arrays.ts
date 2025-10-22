@@ -52,3 +52,9 @@ console.log(sortedResultDesc);
 
 // method unshift - adds element at 0 index
 
+// method slice - extracts elements by setting index
+
+let arrayFruits: string[] = ["apple", "banana", "cherry", "lemon", "peach"];
+let arrayFruitsExtracted: string[] = arrayFruits.slice(0, 3);
+console.log(arrayFruitsExtracted);
+
