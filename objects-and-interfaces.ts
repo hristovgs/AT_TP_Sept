@@ -14,7 +14,7 @@ const car: Car = {
     horsePower: 100,
 };
 
-console.log(car);
+//console.log(car);
 
 // Interface person object
 
@@ -40,18 +40,16 @@ const person: Person = {
     },
 }
 
-console.log(person);
+//console.log(person);
 
 // properties access
-person.name;
-person.age;
-person["adress"];
-console.log(person.greeting());
+// person.name;
+// person.age;
+// person["adress"];
+// console.log(person.greeting());
 
 // properties redeclaration
 person.age = 35;
-
-console.log(person);
 
 // let vs const redeclaration
 let dog = { name: "Sharo" };
@@ -71,25 +69,25 @@ const mouse: { name: string, favFood: string, age: number } = {
 }
 
 // Interfaces - optional parameters, readonly and string literals
-interface User  {
-name: string;
-readonly email: string;
-//string literal
-role: "user" | "admin"| "superadmin";
-job?: string;
-password?: string | number;
+interface User {
+    name: string;
+    readonly email: string;
+    //string literal
+    role: "user" | "admin" | "superadmin";
+    job?: string;
+    password?: string | number;
 }
 
 
-const user : User = {
+const user: User = {
     name: "Tom",
     email: "tom@gmail.com",
     role: "admin",
-    job:"QA"
+    job: "QA"
 };
 
-user.password = 5546122;
-console.log(user);
+// user.password = 5546122;
+// console.log(user);
 
 // const secondUser : User = {
 //     name: "Tom",
@@ -102,10 +100,40 @@ interface UserPermissions extends User {
     permissions: string;
 }
 
-const thirdUser : UserPermissions = {
-name: "erik",
-email: "tom@gmail.com",
-role: "admin",
-job:"QA",
-permissions: "denied",
+const thirdUser: UserPermissions = {
+    name: "erik",
+    email: "tom@gmail.com",
+    role: "admin",
+    job: "QA",
+    permissions: "denied",
 }
+
+
+// exercise sum total price
+interface Product {
+    name: string;
+    price: number;
+    getTotalPrice: (quantity:number) => number;
+}
+
+const smartPhone: Product = {
+name: "Nokia",
+price: 1000,
+getTotalPrice: function(quantity: number){
+    return quantity * this.price;
+}
+
+}
+
+function orderDetails(quantity:number, product: Product){
+    console.log(`order for ${product.name} `);
+    console.log(`Product quantity: ${quantity}`);
+ console.log(`Product unit price: ${product.price}`);
+ console.log(`Product total price: ${product.getTotalPrice(quantity)}`);  // 
+    // console.log("quantity", quantity);
+    // console.log("product", product);
+
+}
+
+orderDetails(5, smartPhone);
+

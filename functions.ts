@@ -39,8 +39,8 @@ greeting("Misho", 15);
 function substractNums (numOne:number= 10, numTwo: number = 5) {
     console.log(numOne-numTwo);
 }
-substractNums(50);
-substractNums(50,30);
+// substractNums(50);
+// substractNums(50,30);
 
 // Function with parameter of union type
 function printId (id: string | number){
