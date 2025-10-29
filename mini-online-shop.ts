@@ -160,10 +160,9 @@ console.log("Products of category clothes: ", filterByCategory(productCatalog, "
 
 
 //// declare function calculateTotalPrice - receive customer data and combine all products price
-
-// declare variable which holds total price of products in customer cart
-let total: number = 0;
 function calculateTotalPrice(client: Customer) {
+    // declare variable which holds total price of products in customer's cart
+let total: number = 0;
     client.cart.map((product: Product) => { total = total + product.price })
     return total;
 }
